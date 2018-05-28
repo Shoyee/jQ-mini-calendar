@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易小日历</title>
+		<style type="text/css">
+			*{
+				margin: 1px;
+				padding: 0;
+			}
+			body{
+				position: relative;
+				text-align: center;
+				width: 200px;
+				height: 400px;
+				border: solid 1px black;
+			}
+			button{
+				background-color: gray;
+				color: white;
+				border: none;
+				width: 30%;
+				height: 20%;
+				transition: all 0.3s;
+			}
+			.active{
+				background-color: white;
+				color: dimgray;
+			}
+			button:hover{
+				border: solid greenyellow 2px;
+				cursor: pointer;
+			}
+			div{
+				position: absolute;
+				display: none;
+				border: none;
+				margin-left: 4px;
+				text-align: center;
+				background-color: gray;
+				color: white;
+				width: 96%;
+				height: 16%;
+			}
+			.content{
+				display: block;
+			}
+		</style>
+		<script type="text/javascript" src="../js/jquery-1.10.1.min.js" ></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					$("button").removeClass("active");
+					$(this).addClass("active");
+					$("div").removeClass("content")
+					$("div").eq($(this).index()).addClass("content")
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button type="button" class="active">1<br />Jan</button>
+		<button type="button">2<br />Feb</button>
+		<button type="button">3<br />Mar</button>
+		<button type="button">4<br />Apr</button>
+		<button type="button">5<br />May</button>
+		<button type="button">6<br />Jun</button>
+		<button type="button">7<br />Jul</button>
+		<button type="button">8<br />Aug</button>
+		<button type="button">9<br />Sep</button>
+		<button type="button">10<br />Oct</button>
+		<button type="button">11<br />Nov</button>
+		<button type="button">12<br />Dec</button>
+		<div class="content">1月，过年好啊！</div>
+		<div>2月，好啊！</div>
+		<div>3月，好啊！</div>
+		<div>4月，好啊！</div>
+		<div>5月，好啊！</div>
+		<div>6月，好啊！</div>
+		<div>7月，好啊！</div>
+		<div>8月，好啊！</div>
+		<div>9月，好啊！</div>
+		<div>10月，好啊！</div>
+		<div>11月，好啊！</div>
+		<div>12月，好啊！</div>
+	</body>
+</html>
